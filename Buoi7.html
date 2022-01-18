@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buổi 7</title>
+    <style>
+        p {
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        #the_h1 {
+            color: #152368;
+            text-decoration: line-through;
+        }
+
+        .the_heading {
+            color: #931583;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        span {
+            color: #ff0000;
+            font-style: italic;
+        }
+        /* <selector> {
+            Các thuộc tính;
+        }
+        <tag name> {
+            Các thuộc tính;
+        }
+        #<id> {
+            Các thuộc tính;
+        }
+        .<class> {
+            Các thuộc tính;
+        }
+        */
+    </style>
+    <link rel="stylesheet" href="css/Buoi7.css">
+</head>
+
+<body>
+    <!-- CSS: Cascading Style Sheet -->
+    <!-- CSS 3 cách viết
+        1. inline: dùng thuộc tính style của html
+        2. internal: thẻ style
+        3. external: viết ra file css sau đó nhúng file css vào file html bằng thẻ link
+    -->
+    <!-- selector: tag name, id, class -->
+    <!-- Độ ưu tiên của các cách viết css: càng gần thẻ được format thì độ ưu tiên càng cao
+        1. inline
+        2. internal || external
+        3. default
+    -->
+    <p style="color:#ff00ff; font-style: italic;">Đây là thẻ p</p>
+    <p>Đây là thẻ paragraph</p>
+    <p>Đây là thẻ đoạn văn</p>
+    <h1 id="the_h1">Đây là thẻ h1</h1>
+    <h2 class="the_heading">Đây là thẻ h2</h2>
+    <h3 class="the_heading">Đây là thẻ h3</h3>
+    <p>
+        Tuần qua <span>(từ ngày 10 - 16/1)</span>, <span>Việt Nam</span> ghi nhận thêm <span>111.542</span> ca nhiễm <span>COVID-19 (F0)</span> mới trong nước, giảm <span>1.135
+        F0</span> so với tuần trước. Trong đó, hơn <span>18%</span> là tại <span>Hà Nội (20.451 F0)</span>, như vậy <span>Hà Nội</span> ghi nhận mức <span>tăng</span> nhẹ cả về số
+        lượng và tỉ lệ phần trăm so với tuần trước.
+    </p>
+    <p>
+        Không chỉ giảm về lượng F0 mới trên cả nước, số trường hợp tử vong cũng tiếp tục được kéo giảm trong giai đoạn
+        này. Theo đó, từ ngày 10 - 16/1 cả nước có 1.290 trường hợp tử vong, giảm 199 trường hợp so với 7 ngày trước đó.
+        Tính trung bình, tuần qua ghi nhận hơn 184 trường hợp tử vong/ngày, thấp hơn so với con số gần 213 của tuần
+        trước.
+    </p>
+</body>
+
+</html>
