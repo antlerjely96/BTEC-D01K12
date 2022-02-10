@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buổi 10</title>
+    <style>
+        /* margin */
+        /* padding */
+        /* css của thẻ a
+            link: khi mới load lên
+            visited: đã từng click
+            hover: khi chỉ vào
+            active: tại thời điểm click
+            link || visited > hover > active
+        */
+        #top {
+            background: rgb(0, 255, 13);
+            width: 80%;
+            height: 200px;
+            /* margin-top: 10px;
+            margin-bottom: 30px;
+            margin-left: 40px;
+            margin-right: 20px; 
+            margin: auto;
+            margin: -10px;
+            */
+            margin: 10px 20px 30px 40px;
+            padding: 20px;
+        }
+        #bottom {
+            background: rgb(0, 217, 255);
+            width: 50%;
+            height: 200px;
+        }
+        #bottom:hover {
+            background-color: cadetblue;
+        }
+        a:link {
+            color: rgb(208, 226, 43);
+        }
+        a:visited {
+            color: rgb(226, 70, 43);
+        }
+        a:hover {
+            color: rgb(43, 226, 83);
+        }
+        a:active {
+            color: rgb(46, 43, 226);
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div id="top">
+            Đây là div top
+        </div>
+        <div id="bottom">
+            Đây là div bottom
+        </div>
+        <a href="#">Đây là thẻ a</a>
+    </div>
+</body>
+</html>
