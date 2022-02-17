@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buổi 13</title>
+    <style>
+        /* pseudo style: pseudo-class và pseudo-element
+            pseudo-class: viết cho thẻ
+                <selector>:<pseudo-class> {
+                    Các thuộc tính;
+                }
+            pseudo-element: viết cho nội dung của thẻ
+                <selector>::<pseudo-element> {
+                    Các thuộc tính;
+                }
+        */
+        p:first-child {
+            color: aqua;
+        }
+        p::first-letter {
+            text-decoration: underline;
+        }
+        /* combinator: dấu cách, dấu >, dấu +, dấu ~ */
+        /* dấu cách: chọn tất cả selector2 nằm trong selector1
+            <selector1><dấu cách><selector2> {
+                Các thuộc tính
+            }
+        */
+        /* Dấu >: chọn tất cả selector2 là con của selector1
+            <selector1> > <selector2> {
+                Các thuộc tính
+            }
+        */
+        /* Dấu +: selector2 nằm liền sau selector1 && bằng cấp vs selector1
+            <selector1> + <selector2> {
+                Các thuộc tính
+            }
+        */
+        /* Dấu ~: chọn tất cả selector2 sau selector1 && bằng cấp vs selector1
+            <selector1> ~ <selector2> {
+                Các thuộc tính
+            }
+        */
+        div p {
+            color: red;
+        }
+        div > p {
+            color: blue;
+        }
+        div + p {
+            color: blueviolet;
+        }
+        div ~ p {
+            color: chartreuse;
+        }
+        /* attr selector: chọn các selector có 1 thuộc tính nào đó của html
+            <selector>[<attr>] {
+                Các thuộc tính;
+            }
+            <selector>[<attr> = "<giá trị của attr>"] {
+                Các thuộc tính;
+            }
+        */
+        p[title] {
+            color: darkblue;
+        }
+        p[title = "p3"] {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <p>Đây là p1</p>
+    <p>Đây là p2</p>
+    <p title="p3">Đây là p3</p>
+    <div>
+        <p>Đây là p4</p>
+        <p>Đây là p5</p>
+        <p>Đây là p6</p>
+        <nav>
+            <p title="p7">Đây là p7</p>
+        </nav>
+        <nav>
+            <div>
+                <p>Đây là p8</p>
+            </div>
+            <p>Đây là p9</p>
+            <p>Đây là p10</p>
+            <p>Đây là p11</p>
+        </nav>
+    </div>
+    <p>Đây là p12</p>
+    <p>Đây là p13</p>
+    <p>Đây là p14</p>
+</body>
+</html>
