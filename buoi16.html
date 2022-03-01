@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buổi 16</title>
+    <script>
+        var arr7 = [1,25,3,8,34,2,6,17,0,20];
+        function demo(){
+            // array
+            var arr = [];
+            // console.log(arr);
+            var arr1 = [0,1,"2",3,4,5];
+            // console.log(arr1);
+            var arr3 = new Array();
+            var arr4 = new Array("a","b","c");
+            var arr5 = new Array(10);
+            var arr6 = Array();
+            
+            // function
+            // Math object
+            // console.log(Math.PI);
+            // console.log(Math.round(Math.random() * 100));
+            // console.log(Math.round(4.4));
+            // console.log(Math.round(4.6));
+            // console.log(Math.floor(4.4));
+            // console.log(Math.floor(4.6));
+            // console.log(Math.ceil(4.4));
+            // console.log(Math.ceil(4.6));
+        }
+        demo();
+        // VD: cho mảng 10 phần tử (tự gán). Sắp xếp mảng giảm dần
+        function sap_xep(){
+            var temp;
+            for(var i = 0; i < arr7.length - 1; i++){
+                for (var j = i + 1; j < arr7.length; j++){
+                    if(Number(arr7[i]) < Number(arr7[j])){
+                        temp = arr7[i];
+                        arr7[i] = arr7[j];
+                        arr7[j] = temp;
+                    }
+                }
+            }
+            // console.log(arr7);
+        }
+        sap_xep();
+        // BT: cho mảng gồm 10 phần tử number. Tìm max của mảng đó
+        //Bài tập: cho mảng 10 phần tử. Tìm các phần tử là số nguyên tố trong mảng
+        function kt(){
+            var temp = Array();
+            for(var i = 0; i < arr7.length; i++){
+                var dem = 0;
+                //Kiểm tra từng phần tử có phải số nguyên tố
+                if(arr7[i] > 1){
+                    for(var j = 2; j < arr7[i]; j++){
+                        if(arr7[i] % j == 0){
+                            dem++;
+                        }
+                    }
+                    if(dem == 0){
+                        temp.push(arr7[i]);
+                    }
+                }
+            }
+            console.log(temp);
+        }
+        kt();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

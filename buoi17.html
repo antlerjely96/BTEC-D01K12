@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buổi 17</title>
+    <!-- validate dữ liệu -->
+    <script>
+        function validate_demo() {
+            var dem = 0;
+            //Validate họ tên
+            var ho_ten = document.getElementById('ho_ten').value;
+            if(ho_ten.length == 0){
+                document.getElementById('error_ho_ten').innerHTML = "Phải nhập";
+                dem++;
+            }
+            else {
+                document.getElementById('error_ho_ten').innerHTML = "";
+            }
+            //Validate Ngày sinh
+            var ngay_sinh = document.getElementById('ngay_sinh').value;
+            if(ngay_sinh.length == 0){
+                document.getElementById('error_ngay_sinh').innerHTML = "Phải nhập";
+                dem++;
+            }
+            else {
+                document.getElementById('error_ngay_sinh').innerHTML = "";
+            }
+            //Validate Giới tính
+            var temp = 0;
+            var gioi_tinh = document.getElementsByName('gioi_tinh');
+            for(var i = 0; i < gioi_tinh.length; i++){
+                if(gioi_tinh[i].checked){
+                    temp++;
+                }
+            }
+            if(temp == 0){
+                document.getElementById('error_gioi_tinh').innerHTML = "Phải chọn";
+                dem++;
+            }
+            else{
+                document.getElementById('error_gioi_tinh').innerHTML = "";
+            }
+            //Validate tình trạng độc thân
+            var FA = document.getElementById('tinh_trang').value;
+            // console.log(FA);
+            if(FA == 0){
+                document.getElementById('error_fa').innerHTML = "Phải Chọn";
+                dem++;
+            }
+            else {
+                document.getElementById('error_fa').innerHTML = "";
+            }
+            // 
+            if(dem != 0){
+                return false;
+            }
+            else {
+                return false;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <form action="buoi15.html" method="GET">
+        Họ tên: <input type="text" id="ho_ten"> <span id="error_ho_ten"></span><br>
+        Ngày sinh: <input type="date" id="ngay_sinh"> <span id="error_ngay_sinh"></span><br>
+        Email: <input type="email" id="email"><br>
+        số điện thoại: <input type="text" id="so_dien_thoai"><br>
+        Giới tính: <input type="radio" name="gioi_tinh"> Nam <input type="radio" name="gioi_tinh"> Nữ <input type="radio" name="gioi_tinh"> Khác <span id="error_gioi_tinh"></span><br>
+        Địa chỉ: <input type="text" id="dia_chi"><br>
+        FA: <select id="tinh_trang">
+            <option value="0"> - Chọn - </option>
+            <option value="1">Có</option>
+            <option value="2">Không</option>
+        </select> <span id="error_fa"></span><br>
+        Ảnh: <input type="file" id="anh"><br>
+        Ghi chú: <textarea id="ghi_chu"></textarea><br>
+        <button onclick="return validate_demo()">Submit</button>
+    </form>
+</body>
+</html>
