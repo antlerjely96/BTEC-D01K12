@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buổi 17</title>
+    <title>Buổi 18</title>
     <!-- validate dữ liệu -->
+    <!-- Biểu thức chính quy (regular expression (regex)) -->
     <script>
         function validate_demo() {
+            /* /pattern/modifier; */
             var dem = 0;
             //Validate họ tên
+            var regex_ho_ten = /^[a-zA-ZàÀảẢãÃáÁạẠăĂằẰẳẲẵẴắẮặẶâÂầẦẩẨẫẪấẤậẬđĐèÈẻẺẽẼéÉẹẸêÊềỀểỂễỄếẾệỆìÌỉỈĩĨíÍịỊòÒỏỎõÕóÓọỌôÔồỒổỔỗỖốỐộỘơƠờỜởỞỡỠớỚợỢùÙủỦũŨúÚụỤưƯừỪửỬữỮứỨựỰỳỲỷỶỹỸýÝỵỴ\s\n]+$/;
             var ho_ten = document.getElementById('ho_ten').value;
+            var kq_ho_ten = regex_ho_ten.test(ho_ten);
             if(ho_ten.length == 0){
                 document.getElementById('error_ho_ten').innerHTML = "Phải nhập";
+                dem++;
+            }
+            else if(kq_ho_ten == false){
+                document.getElementById('error_ho_ten').innerHTML = "Họ tên không được chứa số hoặc ký tự đặc biệt";
                 dem++;
             }
             else {
@@ -52,6 +60,36 @@
             else {
                 document.getElementById('error_fa').innerHTML = "";
             }
+            // Validate email
+            var regex_email = /^[a-zA-Z0-9]+[a-zA-Z0-9.]*@[a-z]{3,8}.[a-z]{3,5}[a-z.]*$/;
+            var email = document.getElementById('email').value;
+            var kq_email = regex_email.test(email);
+            if(email.length == 0){
+                document.getElementById('error_email').innerHTML = "Phải nhập";
+                dem++;
+            }
+            else if(kq_email == false){
+                document.getElementById('error_email').innerHTML = "Phải nhập đúng email";
+                dem++;
+            }
+            else {
+                document.getElementById('error_email').innerHTML = "";
+            }
+            // Validate số điện thoại
+            var regex_so_dien_thoai = /^0[0-9]{9,10}$/;
+            var so_dien_thoai = document.getElementById('so_dien_thoai').value;
+            var kq_so_dien_thoai = regex_so_dien_thoai.test(so_dien_thoai);
+            if(so_dien_thoai.length == 0){
+                document.getElementById('error_so_dien_thoai').innerHTML = "Phải nhập";
+                dem++;
+            }
+            else if(kq_so_dien_thoai == false){
+                document.getElementById('error_so_dien_thoai').innerHTML = "Phải nhập đúng số điện thoại";
+                dem++;
+            }
+            else {
+                document.getElementById('error_so_dien_thoai').innerHTML = "";
+            }
             // 
             if(dem != 0){
                 return false;
@@ -67,8 +105,8 @@
     <form action="buoi15.html" method="GET">
         Họ tên: <input type="text" id="ho_ten"> <span id="error_ho_ten"></span><br>
         Ngày sinh: <input type="date" id="ngay_sinh"> <span id="error_ngay_sinh"></span><br>
-        Email: <input type="email" id="email"><br>
-        số điện thoại: <input type="text" id="so_dien_thoai"><br>
+        Email: <input type="text" id="email"> <span id="error_email"></span><br>
+        số điện thoại: <input type="text" id="so_dien_thoai"> <span id="error_so_dien_thoai"></span><br>
         Giới tính: <input type="radio" name="gioi_tinh"> Nam <input type="radio" name="gioi_tinh"> Nữ <input type="radio" name="gioi_tinh"> Khác <span id="error_gioi_tinh"></span><br>
         Địa chỉ: <input type="text" id="dia_chi"><br>
         FA: <select id="tinh_trang">
